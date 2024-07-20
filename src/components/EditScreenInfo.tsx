@@ -1,13 +1,24 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Button, StyleSheet } from 'react-native';
+
+import dataController from '../controllers/ApiController';
 
 import { ExternalLink } from './ExternalLink';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
-import Colors from '@/constants/Colors';
+import Colors from '@/src/constants/Colors';
 
 export default function EditScreenInfo({ path }: { path: string }) {
+  const handleButtonPress = async () => {
+    try {
+      const posts = await dataController.getLeagues();
+      console.log(posts);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+
   return (
     <View>
       <View style={styles.getStartedContainer}>
@@ -31,6 +42,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           darkColor="rgba(255,255,255,0.8)">
           Change any of the text, save the file, and your app will automatically update.
         </Text>
+        <Button title='teste' onPress={() => handleButtonPress()}/>
       </View>
 
       <View style={styles.helpContainer}>
