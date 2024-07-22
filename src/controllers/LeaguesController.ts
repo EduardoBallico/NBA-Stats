@@ -1,7 +1,6 @@
 import api from '@/src/services/ApiService';
 
-class DataController {
-	// Método assíncrono para obter um usuário pelo seu ID
+class LeaguesController {
 	async getLeagues() {
 		try {
 			const response = await api.get(`leagues`);
@@ -12,4 +11,4 @@ class DataController {
 	}
 }
 
-export default new DataController();
+export default new LeaguesController();

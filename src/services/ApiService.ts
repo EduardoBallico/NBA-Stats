@@ -7,14 +7,11 @@ class ApiService {
 		this.api = axios.create({
 			baseURL: 'https://v2.nba.api-sports.io/',
 			timeout: 30000,
+			headers: {
+				'x-rapidapi-key': '6c1a261a154e0d692611d32165b01b9e',
+				'x-rapidapi-host': 'v2.nba.api-sports.io'
+			}
 		});
-
-    var config = {
-      headers: {
-        'x-rapidapi-key': '32f61467af0fd28e9b254f479c09a060',
-        'x-rapidapi-host': 'v2.nba.api-sports.io'
-      }
-    };
 
 		this.api.interceptors.response.use(
 			(response) => response,

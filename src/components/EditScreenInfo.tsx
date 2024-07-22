@@ -1,19 +1,21 @@
 import React from 'react';
 import { Button, StyleSheet } from 'react-native';
 
-import dataController from '../controllers/ApiController';
+import LeaguesController from '@/src/controllers/LeaguesController';
 
 import { ExternalLink } from './ExternalLink';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
 import Colors from '@/src/constants/Colors';
+import StandingsController from '../controllers/StandingsController';
+import { GetStandingsParams } from '../types/StandingsParams';
 
 export default function EditScreenInfo({ path }: { path: string }) {
   const handleButtonPress = async () => {
     try {
-      const posts = await dataController.getLeagues();
-      console.log(posts);
+      // const standings = await StandingsController.getStandings({ league: 'standard', season: 2021 } as GetStandingsParams);
+      // console.log(standings);
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
