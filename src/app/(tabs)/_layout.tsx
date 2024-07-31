@@ -22,15 +22,13 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}>
       <Tabs.Screen
-        name="index"
+        name="gamesScreen"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Games',
+          tabBarIcon: ({ color }) => <TabBarIcon name="dribbble" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -48,10 +46,17 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="teamsScreen"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Teams',
+          tabBarIcon: ({ color }) => <TabBarIcon name="rocket" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="standingsScreen"
+        options={{
+          title: 'Standings',
+          tabBarIcon: ({ color }) => <TabBarIcon name="table" color={color} />,
         }}
       />
     </Tabs>

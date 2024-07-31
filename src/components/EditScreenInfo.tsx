@@ -1,8 +1,6 @@
 import React from 'react';
 import { Button, StyleSheet } from 'react-native';
 
-import LeaguesController from '@/src/controllers/LeaguesController';
-
 import { ExternalLink } from './ExternalLink';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
